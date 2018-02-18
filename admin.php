@@ -62,6 +62,7 @@ while($upit2=mysql_fetch_assoc($upit1))
 	  <td><a class="btn btn-danger btn-xs" role="button"  href="delete.php?id=<?php echo $upit2['id']?>">DELETE</a></td>
 	  <td><a class="btn btn-primary btn-xs" role="button"  href="add.php">ADD</a></td>
     </tr>
+	
 <?php
 }
 }else{
