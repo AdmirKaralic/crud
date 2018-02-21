@@ -24,7 +24,7 @@ if(isset($_SESSION['login_user'])){
 <div class="col-lg-8 offset-lg-2">
 <h2>PHP MySQL Admin,User and Moderator Multirole Login,Logout With SESSION</h2>
 
-<form  method="POST" action="">
+<form  method="POST" action="">	
 <div class="form-group">
 <label>UserName:</label><br/>
 <input class="form-control" type="text" name="username"/><br/>
