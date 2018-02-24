@@ -40,7 +40,7 @@ include('connect.php');
 				$query1=mysql_query("insert into korisnici (imeprezime, dob, email, username, adresa, password,role) values('$ime','$dob','$eml','$usr','$adr','$pass','user')");
 			
 				if($query1){
-					      echo "Upisan";
+					      header("location:index.php");
 					}else{
 						echo"There has been an error";
 					}
