@@ -14,27 +14,40 @@ if(isset($_SESSION['login_user'])){
  
 ?>
 <html>
-<title>Welcome to nesto</title>
+<title>Welcome</title>
 <head> 
 <!--<link rel="stylesheet" href="style.css" type="text/css"/>-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-<div class="col-lg-8 offset-lg-2">
-<h2>PHP MySQL Admin,User and Moderator Multirole Login,Logout With SESSION</h2>
+<div class="container" style="margin-top:50px;">
+    <div class="col-md-12">
+    <div class="modal-dialog" style="margin-bottom:0">
+        <div class="modal-content" style="padding:5px;">
+                    <div class="panel-heading">
+                        <h1 class="panel-title text-center">Sign In</h1></br>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button class="btn btn-sm btn-success">Login</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+    </div>
+</div>
 
-<form  method="POST" action="">	
-<div class="form-group">
-<label>UserName:</label><br/>
-<input class="form-control" type="text" name="username"/><br/>
-<label>PassWord:</label><br/>
-<input class="form-control" type="password" name="password"/><br/>
-<input type="submit" name="submit" value="LogIn"/>
 </div>
-</form>
-</div>
-</div>
+
 
 
 
