@@ -28,7 +28,7 @@ if(isset($_SESSION['login_user'])){
                         <h1 class="panel-title text-center">Sign In</h1></br>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action="">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Username" name="username" type="text" autofocus="">
@@ -38,7 +38,7 @@ if(isset($_SESSION['login_user'])){
                                 </div>
                                 
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-sm btn-success">Login</button>
+                                <button type="submit" name="submit" class="btn btn-sm btn-success">Login</button>
                             </fieldset>
                         </form>
                     </div>

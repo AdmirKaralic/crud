@@ -50,7 +50,7 @@
 	  
        </div>
 	   <div class="text-center">
-	    <button type="submit" class="btn btn-primary">Register</button>
+	    <button type="submit" name="submit" class="btn btn-primary">Register</button>
 		</div>
 	   </form> <!-- end of form -->
 
@@ -71,7 +71,7 @@ include('connect.php');
 				$query1=mysql_query("insert into korisnici (imeprezime, dob, email, username, adresa, password,role) values('$ime','$dob','$eml','$usr','$adr','$pass','user')");
 			
 				if($query1){
-					      header("location:index.php");
+					      header('location:index.php');
 					}else{
 						echo"There has been an error";
 					}
