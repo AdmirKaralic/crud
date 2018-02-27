@@ -14,15 +14,15 @@ if($login_role=='moderator'){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-top:10px;">
 
 
 
-<div class="jumbotron">
+<div class="jumbotron" style="padding:20px;">
 <h1 class="display-4 text-center">Welcome To <?php echo $login_role;?> Page</h1>
  <hr class="my-4">
 <div class="container">
-<p class="lead">User name is: <strong><?php echo $login_session;?></strong> and Your Role is :<strong><?php echo $login_role;?></strong></p>
+<p class="lead">User name is: <strong style="text-transform:uppercase;"><?php echo $login_session;?></strong> and Your Role is :<strong style="text-transform:uppercase;"><?php echo $login_role;?></strong></p>
 <a class="btn btn-outline-primary btn-xs" role="button" id="logout" href="logout.php">Logout</a>
 <a class="btn btn-outline-primary btn-xs" style="float:right;" role="button"  href="add.php">Add New User</a>
 </div>
@@ -33,7 +33,10 @@ if($login_role=='admin'){
  $sql="SELECT id, username, imeprezime, email, dob, adresa from korisnici where not id=$login_id order by id";
 $upit1=mysql_query($sql);
 ?>
-<h3>Lista korisnika iz baze </h3>
+<div class="alert alert-secondary" role="alert">
+  <h3>Lista korisnika iz baze </h3>
+</div>
+
  <hr class="my-4">
  <div class="table-responsive">
 <table class="table table-striped">

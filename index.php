@@ -21,7 +21,7 @@ if(isset($_SESSION['login_user'])){
 </head>
 <body>
 <div class="container" style="margin-top:200px;">
-    <div class="col-md-12">
+    <div class="offset-4 col-md-4">
     <div class="modal-dialog" style="margin-bottom:0">
         <div class="modal-content" style="padding:5px;">
                     <div class="panel-heading">

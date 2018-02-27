@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +77,25 @@ include('connect.php');
 				$query1=mysql_query("insert into korisnici (imeprezime, dob, email, username, adresa, password,role) values('$ime','$dob','$eml','$usr','$adr','$pass','user')");
 					  
 				if($query1){
-							header('location:index.php');
+                    
+                            //Run Query to Database
+                                 $sql="SELECT*FROM korisnici WHERE username='$usr' AND password='$pass'";
+                                 $result=mysql_query($sql);
+                                 //Counting Numbers of MySQL row [if user Found row must be 1]
+                                 $row=mysql_num_rows($result);
+                                 //Fetching User Informaiton from Database
+                                 $userinfo=mysql_fetch_assoc($result);
+                                 $role=$userinfo['role'];
+                                                     if($row==1){
+                                  //Initilizing SESSION with Differents user Role
+                                  $_SESSION['login_user']=$usr;
+                                  $_SESSION['role']=$role;
+                                                         header('location:user.php');
+                                                     
+                                                     }
+                    
+                    
+						
 							}
 						    else{  echo"There has been an error"; }
 										           
