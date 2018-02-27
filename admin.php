@@ -23,12 +23,13 @@ if($login_role=='moderator'){
  <hr class="my-4">
 <div class="container">
 <p class="lead">User name is: <strong><?php echo $login_session;?></strong> and Your Role is :<strong><?php echo $login_role;?></strong></p>
-<a class="btn btn-primary btn-lg pull-right" role="button" id="logout" href="logout.php">Please Click To Logout</a>
+<a class="btn btn-outline-primary btn-xs" role="button" id="logout" href="logout.php">Logout</a>
+<a class="btn btn-outline-primary btn-xs" style="float:right;" role="button"  href="add.php">Add New User</a>
 </div>
 </div>
 <div class="col-lg-12 col-xs-12 text-center">
 <?php
-if($login_role=='admin'){ var_dump($login_id);
+if($login_role=='admin'){
  $sql="SELECT id, username, imeprezime, email, dob, adresa from korisnici where not id=$login_id order by id";
 $upit1=mysql_query($sql);
 ?>
@@ -44,6 +45,8 @@ $upit1=mysql_query($sql);
       <th scope="col">Username</th>
 	  <th scope="col">Email</th>
       <th scope="col">Datum Rodzenja</th>
+	  <th scope="col">Update</th>
+	  <th scope="col">Delete</th>
     </tr>
   </thead>
 <tbody>
@@ -58,9 +61,8 @@ while($upit2=mysql_fetch_assoc($upit1))
       <td><?php echo $upit2['username'];?></td>
       <td><?php echo $upit2['email'];?></td>
 	  <td><?php echo $upit2['dob'];?></td>
-	  <td><a class="btn btn-warning btn-xs" role="button" href="edit.php?id=<?php echo $upit2['id']?>">EDIT</a></td>
-	  <td><a class="btn btn-danger btn-xs" role="button"  href="delete.php?id=<?php echo $upit2['id']?>">DELETE</a></td>
-	  <td><a class="btn btn-primary btn-xs" role="button"  href="add.php">ADD</a></td>
+	  <td><a class="btn btn-warning btn-xs" role="button" href="edit.php?id=<?php echo $upit2['id']?>">Update</a></td>
+	  <td><a class="btn btn-danger btn-xs" role="button"  href="delete.php?id=<?php echo $upit2['id']?>">Delete</a></td>
     </tr>
 	
 <?php

@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-   <div class="container">
+   <div class="container" style="margin-top:100px;">
     <hr>
    <h1 class="text-center"> Registration </h1> </br>
    <hr>
@@ -50,8 +50,11 @@
 	  
        </div>
 	   <div class="text-center">
-	    <button type="submit" class="btn btn-primary">Register</button>
+	    <button type="submit" name="submit" class="btn btn-primary">Register</button>
 		</div>
+		                             <div class="login-help">
+					                 <span>Already registered!</span> <a href="index.php">Login</a>
+				                        </div>
 	   </form> <!-- end of form -->
 
     </div> <!-- end of container-->
@@ -69,13 +72,16 @@ include('connect.php');
 				$pass=$_POST['password'];
 				$eml=$_POST['email'];
 				$query1=mysql_query("insert into korisnici (imeprezime, dob, email, username, adresa, password,role) values('$ime','$dob','$eml','$usr','$adr','$pass','user')");
-			
+					  
 				if($query1){
-					      header("location:index.php");
-					}else{
-						echo"There has been an error";
-					}
-					
+							header('location:index.php');
+							}
+						    else{  echo"There has been an error"; }
+										           
+																		
 }
+
+					
+
 
 ?>
