@@ -37,47 +37,36 @@ $upit1=mysql_query($sql);
   <h3>Lista korisnika iz baze </h3>
 </div>
 
- <hr class="my-4">
- <div class="table-responsive">
-<table class="table table-striped">
-  <thead>
-    <tr>
-	  <th scope="col">Id</th>
-      <th scope="col">Ime i Prezime</th>
-      <th scope="col">Adresa</th>
-      <th scope="col">Username</th>
-	  <th scope="col">Email</th>
-      <th scope="col">Datum Rodzenja</th>
-	  <th scope="col">Update</th>
-	  <th scope="col">Delete</th>
-    </tr>
-  </thead>
-<tbody>
-<?php
+<div class="row">
+  <?php
 while($upit2=mysql_fetch_assoc($upit1))
 {
-	?>
-    <tr>
-	  <td><?php echo $upit2['id'];?></td>
-      <td><?php echo $upit2['imeprezime'];?></td>
-      <td><?php echo $upit2['adresa'];?></td>
-      <td><?php echo $upit2['username'];?></td>
-      <td><?php echo $upit2['email'];?></td>
-	  <td><?php echo $upit2['dob'];?></td>
-	  <td><a class="btn btn-warning btn-xs" role="button" href="edit.php?id=<?php echo $upit2['id']?>">Update</a></td>
-	  <td><a class="btn btn-danger btn-xs" role="button"  href="delete.php?id=<?php echo $upit2['id']?>">Delete</a></td>
-    </tr>
-	
-<?php
+  ?>
+  
+  <div class="col-md-4">
+    <div style="border:1px solid #000;margin:6px -8px; box-sizing: border-box; padding: 5px;">
+         <h3><small>Id: <?php echo $upit2['id'];?> </small> - <?php echo $upit2['imeprezime'];?></h3>
+    <hr class="my-4">
+    <p><strong>Username: </strong> <?php echo $upit2['username'];?></p>
+    <p><strong>Email: </strong> <?php echo $upit2['email'];?></p>
+    <p><strong>Address: </strong> <?php echo $upit2['adresa'];?></p>
+    <p><strong>Date of Birth: </strong> <?php echo $upit2['dob'];?></p>
+    
+         <button type="button" style="float: left;" class="btn btn-secondary btn-warning btn-xs"><a href="edit.php?id=<?php echo $upit2['id']?>">Update</a></button>
+         <button type="button" style="float: right;" class="btn btn-secondary btn-danger btn-xs"><a href="edit.php?id=<?php echo $upit2['id']?>">Delete</a></button>
+         <div class="clearFix"></div>
+  </div>
+</div>
+   <?php
 }
 }else{
-	header('location: index.php');
+  header('location: index.php');
 }
 
 ?>
-</tbody>
-</table>
-</div>
+
+  </div>
+
 </div>
 </div>
 			
