@@ -8,37 +8,17 @@ if($login_role=='moderator'){
 }
 ?>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Adding new user</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
 <body>
-<h1> Dodavanje novog Korisnika</h1>
-<style>
+   <div class="container" style="margin-top:100px;">
+    <hr>
+   <h1 class="text-center"> Adding new user </h1> </br>
+   <hr>
 
-input[type=text],[type=password],[type=date],[type=email]{
-	width:100%;
-}
-#btn{
-	width:100px;
-	margin:10px auto;
-	text-align: center;
-	display:block;
-}
-.div{
-	width:600px;
-	height:auto;
-	margin:100px auto;
-	padding:5px;
-	border:1px solid #000;
-	
-}
-form{
-	padding:10px;
-}
-h1{
-	text-align:center;
-}
-
-
-
-</style>
 <?php
 if($login_role=='admin'){
 include('connect.php');
@@ -62,21 +42,49 @@ include('connect.php');
 	header('location:index.php');
 }
 ?>
-<div class="div">
-<form method="POST" action="">
-Ime i Prezime: <input type="text" name="imeprezime"><br>
-Adresa: <input type="text" name="adresa"><br>
-Username: <input type="text" name="username"><br>
-Datum Rodzenja: <input type="date" name="dob"><br>
-Email: <input type="email" name="email"><br>
-Password: <input type="password" name="password"><br>
-<br>
-<input type="submit" name="submit" id="btn">
+<form action="" method="post">
+   <div class="form-row text-center">
+   <div class="form-group col-lg-6">
+       <label for="user">Username</label>
+       <input  class="form-control form-control-sm" type="text" name="username" id="user"> 
+	   
+	   </div>
+	   <div class="form-group col-lg-6">
+	   <label for="pass">Password</label>
+       <input class="form-control form-control-sm" type="password" name="password" id="pass"> 
+	   
+	   </div>
+	   </div>
+	   <div class="form-row text-center">
+	   <div class="form-group col-lg-6">
+	   <label for="ime">Ime I Prezime</label>
+       <input class="form-control form-control-sm" type="text" name="imeprezime" id="ime">
+	   
+	   </div>
+	   <div class="form-group col-lg-6">
+	   <label for="mail">Email</label>
+       <input class="form-control form-control-sm" type="email" name="email" id="mail"> 
+	   </div>
+	   
+	   </div>
+	   <div class="form-row text-center">
+	        <div class="form-group col-lg-6">
+	          <label for="dob">Datum Rodzenja</label>
+              <input class="form-control form-control-sm" type="date" name="dob" id="dob">
+	        </div>
+	  
+	   <div class="form-group col-lg-6">
+	   <label for="adresa">Adresa</label>
+       <input class="form-control form-control-sm" type="text" name="adresa" id="adresa">
+	   
+	   </div>
+	  
+       </div>
+	   <div class="text-center">
+	    <button type="submit" name="submit" class="btn btn-primary">Add</button>
+		</div>
+	   </form> <!-- end of form -->
 
-</form>
-</div>
+    </div> <!-- end of container-->
 </body>
 </html>
-<?php
-ob_end_flush();
-?>

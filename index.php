@@ -20,7 +20,7 @@ if(isset($_SESSION['login_user'])){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<div class="container" style="margin-top:50px;">
+<div class="container" style="margin-top:200px;">
     <div class="col-md-12">
     <div class="modal-dialog" style="margin-bottom:0">
         <div class="modal-content" style="padding:5px;">
@@ -37,9 +37,11 @@ if(isset($_SESSION['login_user'])){
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
                                 
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" name="submit" class="btn btn-sm btn-success">Login</button>
+                                <button type="submit" name="submit" class="btn btn-xs btn-outline-success">Login</button>
                             </fieldset>
+							<div class="login-help text-right">
+					                   <a href="reg.php">Register</a>
+				                </div>
                         </form>
                     </div>
                 </div>
