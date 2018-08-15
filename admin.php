@@ -53,7 +53,7 @@ while($upit2=mysql_fetch_assoc($upit1))
     <p><strong>Date of Birth: </strong> <?php echo $upit2['dob'];?></p>
     
          <button type="button" style="float: left;" class="btn btn-secondary btn-warning btn-xs"><a href="edit.php?id=<?php echo $upit2['id']?>">Update</a></button>
-         <button type="button" style="float: right;" class="btn btn-secondary btn-danger btn-xs"><a href="edit.php?id=<?php echo $upit2['id']?>">Delete</a></button>
+         <button type="button" style="float: right;" class="btn btn-secondary btn-danger btn-xs"><a href="delete.php?id=<?php echo $upit2['id']?>">Delete</a></button>
          <div class="clearFix"></div>
   </div>
 </div>
